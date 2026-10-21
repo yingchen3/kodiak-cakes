@@ -76,3 +76,11 @@ dist/contributions.js. Bear and habitat artwork follow their Figma groups.
 Ecosystem artwork uses all six locations in a deterministic shuffled rotation.
 Only placeholder messages are replaced; Joe Staluppi and custom editor copy
 are preserved. The shared catalog applies this to the canvas, stack, and editor.
+
+## Deployment
+
+The website is published with GitHub Pages at:
+https://yingchen3.github.io/kodiak-cakes/
+
+Pushes to main automatically deploy the dist/ folder through
+.github/workflows/deploy-pages.yml. No build step is required.
