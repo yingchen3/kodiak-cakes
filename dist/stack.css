@@ -4,7 +4,7 @@ html.scroll-page{height:auto;overflow-y:auto;overflow-x:hidden}
 .stack-item{position:relative;width:min(320px,65vw);padding:0;border:0;background:transparent;cursor:pointer;flex:none;margin-top:-28px;transform:translateX(var(--offset)) rotate(var(--turn));transition:transform .18s}
 .stack-item:first-child{margin-top:0}.stack-item img{width:100%;height:auto;display:block;pointer-events:none;filter:drop-shadow(0 5px 3px #38231625)}
 .stack-item:hover,.stack-item:focus-visible{z-index:3;transform:translateX(var(--offset)) rotate(0deg) scale(1.03);outline-offset:5px}
-.stack-page .logo{width:clamp(84px,10.5vw,147px)}
-@media(max-width:600px){.stack-page .logo{width:84px;left:16px;bottom:16px}.stack{margin-top:85px}}
+.stack-page .logo{width:clamp(58.8px,7.35vw,102.9px)}
+@media(max-width:600px){.stack-page .logo{width:58.8px;left:16px;bottom:16px}.stack{margin-top:85px}}
 @media(prefers-reduced-motion:reduce){.stack-item{transition:none}}
 .stack-page{background-size:cover;background-attachment:fixed}
