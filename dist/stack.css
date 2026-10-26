@@ -1,10 +1,12 @@
 html.scroll-page{height:auto;overflow-y:auto;overflow-x:hidden}
 .stack-page{height:auto;min-height:100%;overflow:auto;overflow-x:hidden;background:#bc9a68 url('assets/paper.png') repeat;background-size:1536px 1024px}
-.stack{width:min(390px,75vw);margin:90px auto 160px;display:flex;flex-direction:column;align-items:center;isolation:isolate}
+.stack{width:min(520px,calc(100vw - 48px));margin:90px 0 100px clamp(24px,4vw,72px);display:flex;flex-direction:column;align-items:center;isolation:isolate}
 .stack-item{position:relative;width:min(320px,65vw);padding:0;border:0;background:transparent;cursor:pointer;flex:none;margin-top:-28px;transform:translateX(var(--offset)) rotate(var(--turn));transition:transform .18s}
 .stack-item:first-child{margin-top:0}.stack-item img{width:100%;height:auto;display:block;pointer-events:none;filter:drop-shadow(0 5px 3px #38231625)}
 .stack-item:hover,.stack-item:focus-visible{z-index:3;transform:translateX(var(--offset)) rotate(0deg) scale(1.03);outline-offset:5px}
 .stack-page .logo{width:clamp(58.8px,7.35vw,102.9px)}
-@media(max-width:600px){.stack-page .logo{width:58.8px;left:16px;bottom:16px}.stack{margin-top:85px}}
+@media(max-width:600px){.stack-page .logo{width:58.8px;left:16px;bottom:16px}.stack{width:calc(100vw - 32px);margin:85px 0 100px 16px}}
 @media(prefers-reduced-motion:reduce){.stack-item{transition:none}}
 .stack-page{background-size:cover;background-attachment:fixed}
+
+.stack-plate{position:relative;display:block;width:100%;height:auto;flex:none;margin-top:clamp(-120px,-10vw,-64px);z-index:-1;pointer-events:none;user-select:none}
