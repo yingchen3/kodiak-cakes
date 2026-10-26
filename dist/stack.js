@@ -11,7 +11,6 @@ const plate=document.createElement('img');plate.className='stack-plate';plate.sr
 window.addEventListener('scroll',hide,{passive:true});window.addEventListener('resize',position);document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()});document.addEventListener('pointerdown',e=>{if(!e.target.closest('.stack-item'))hide()});
 
 const statueColumn=document.querySelector('#statues');
-const comparisonCopy=document.querySelector('#comparison-copy');
 for(let i=0;i<9;i++){
  const bear=document.createElement('img');bear.src='assets/grizzly-bear.png';bear.className='grizzly-comparison';bear.alt='Grizzly bear '+(i+1)+' of 9';bear.width=6486;bear.height=4048;bear.loading='lazy';bear.decoding='async';bear.draggable=false;statueColumn.append(bear);
 }
@@ -19,5 +18,5 @@ for(let i=0;i<4;i++){
  const statue=document.createElement('img');statue.src='assets/statue-of-liberty.png';statue.className='liberty-statue';statue.alt='Statue of Liberty '+(i+1)+' of 4';statue.width=1322;statue.height=3575;statue.loading='lazy';statue.decoding='async';statue.draggable=false;statueColumn.append(statue);
 }
 // Align the base of the statues to the bottom pancake, above the plate.
-function alignStatues(){const last=stack.querySelector('.stack-item:last-of-type');if(!last)return;const pancakeBottom=last.offsetTop+last.offsetHeight;statueColumn.style.marginBottom=Math.max(0,stack.offsetHeight-pancakeBottom)+'px';comparisonCopy.style.marginTop=(statueColumn.offsetTop+9*150)+'px'}
+function alignStatues(){const last=stack.querySelector('.stack-item:last-of-type');if(!last)return;const pancakeBottom=last.offsetTop+last.offsetHeight;statueColumn.style.marginBottom=Math.max(0,stack.offsetHeight-pancakeBottom)+'px'}
 new ResizeObserver(alignStatues).observe(stack);window.addEventListener('resize',alignStatues);alignStatues();

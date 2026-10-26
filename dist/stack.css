@@ -13,13 +13,17 @@ html.scroll-page{height:auto;overflow-y:auto;overflow-x:hidden}
 
 /* Keep the requested 4,605px image height; the comparison can scroll sideways. */
 html.scroll-page,.stack-page{overflow-x:auto}
-.stack-comparison{display:flex;align-items:flex-end;gap:80px;width:max-content;margin:90px 32px 100px clamp(24px,4vw,72px)}
+.stack-comparison{display:flex;align-items:flex-end;gap:80px;width:max-content;margin:48px 32px 100px clamp(24px,4vw,72px)}
 .stack-comparison .stack{position:relative;flex:none;margin:0}
 .statue-column{display:flex;flex-direction:column;flex:none;gap:0;line-height:0}
 .liberty-statue{display:block;height:4605px;width:auto;max-width:none;flex:none;aspect-ratio:1322 / 3575;user-select:none}
-@media(max-width:600px){.stack-comparison{gap:40px;margin:85px 16px 100px}}
+@media(max-width:600px){.stack-comparison{gap:40px;margin:48px 16px 100px}}
 
 .stack-comparison{position:relative}
 .statue-column{align-items:center}
 .grizzly-comparison{display:block;height:150px;width:auto;max-width:none;flex:none;aspect-ratio:6486 / 4048;user-select:none}
-.comparison-copy{align-self:flex-start;flex:none;width:320px;margin:1350px 0 0;font-family:'Roboto Condensed',sans-serif;font-size:20px;font-weight:400;line-height:1.3;color:var(--brown)}
+.comparison-copy{width:min(900px,calc(100vw - 220px));margin:32px 0 0 clamp(24px,4vw,72px);font-family:'Roboto Condensed',sans-serif;font-size:40px;font-weight:400;line-height:1.2;color:#E2DFD2}
+
+/* Move the bears into the transparent space above the statue torch. */
+.grizzly-comparison{position:relative;z-index:1;transform:translateY(150px)}
+@media(max-width:760px){.comparison-copy{width:calc(100vw - 32px);margin:88px 16px 0}}
