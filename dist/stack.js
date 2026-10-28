@@ -4,12 +4,17 @@ const pancakeStack=document.createElement('div');
 pancakeStack.className='stack-art';
 pancakeStack.setAttribute('role','img');
 pancakeStack.setAttribute('aria-label','Tall stack of pancakes');
-for(const top of [0,320,632]){
+const layerTops=[0];
+for(let i=1;i<10;i++)layerTops.push(layerTops[i-1]+(i%2?320:312));
+const stackHeight=layerTops[layerTops.length-1]+408;
+pancakeStack.style.aspectRatio=`295 / ${stackHeight}`;
+for(const top of layerTops){
  const layer=document.createElement('img');
  layer.className='stack-layer';
  layer.src='assets/figma-pancake-stack-layer.png';
  layer.alt='';
- layer.style.top=top/1040*100+'%';
+ layer.style.top=top/stackHeight*100+'%';
+ layer.style.height=408/stackHeight*100+'%';
  layer.width=295;
  layer.height=408;
  layer.draggable=false;
