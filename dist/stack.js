@@ -33,6 +33,14 @@ plate.draggable=false;
 stack.append(plate);
 
 const bearColumn=document.querySelector('#bears');
+const bears=[];
 for(let i=0;i<3;i++){
- const bear=document.createElement('img');bear.src='assets/grizzly-bear.png';bear.className='grizzly-comparison';bear.alt='Grizzly bear '+(i+1)+' of 3';bear.width=6486;bear.height=4048;bear.loading='lazy';bear.decoding='async';bear.draggable=false;bearColumn.append(bear);
+ const bear=document.createElement('img');bear.src='assets/grizzly-bear.png';bear.className='grizzly-comparison';bear.alt='Grizzly bear '+(i+1)+' of 3';bear.width=6486;bear.height=4048;bear.loading='eager';bear.decoding='async';bear.draggable=false;bearColumn.append(bear);bears.push(bear);
 }
+function matchBearStackHeight(){
+ const height=pancakeStack.getBoundingClientRect().height;
+ bearColumn.style.height=height+'px';
+ for(const bear of bears)bear.style.height=height/bears.length+'px';
+}
+new ResizeObserver(matchBearStackHeight).observe(pancakeStack);
+matchBearStackHeight();
