@@ -27,10 +27,7 @@ plate.loading='lazy';
 plate.draggable=false;
 stack.append(plate);
 
-const statueColumn=document.querySelector('#statues');
-for(let i=0;i<9;i++){
- const bear=document.createElement('img');bear.src='assets/grizzly-bear.png';bear.className='grizzly-comparison';bear.alt='Grizzly bear '+(i+1)+' of 9';bear.width=6486;bear.height=4048;bear.loading='lazy';bear.decoding='async';bear.draggable=false;statueColumn.append(bear);
-}
-for(let i=0;i<4;i++){
- const statue=document.createElement('img');statue.src='assets/statue-of-liberty.png';statue.className='liberty-statue';statue.alt='Statue of Liberty '+(i+1)+' of 4';statue.width=1322;statue.height=3575;statue.loading='lazy';statue.decoding='async';statue.draggable=false;statueColumn.append(statue);
+const bearColumn=document.querySelector('#bears');
+for(let i=0;i<3;i++){
+ const bear=document.createElement('img');bear.src='assets/grizzly-bear.png';bear.className='grizzly-comparison';bear.alt='Grizzly bear '+(i+1)+' of 3';bear.width=6486;bear.height=4048;bear.loading='lazy';bear.decoding='async';bear.draggable=false;bearColumn.append(bear);
 }
