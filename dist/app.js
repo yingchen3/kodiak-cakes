@@ -4,7 +4,7 @@ const W=10000,H=8000,HEADING_TOP=3420;let scale=1,x=0,y=0,dragged=false,active=n
 const asset=(name)=>'assets/'+name;
 for(let r=0;r<8;r++)for(let c=0;c<7;c++){const tile=document.createElement('div');tile.className='paper-tile';tile.style.left=c*1536+'px';tile.style.top=r*1024+'px';tile.style.transform=`scale(${c%2?-1:1},${r%2?-1:1})`;world.append(tile)}
 // Keep the sample layout heading anchored to the landscape as it pans and zooms.
-const heading=document.createElement('header');heading.className='canvas-heading';heading.innerHTML='<h1>Your Pancakes protect the wild</h1><p>every pancake art you share, Kodiak donates $1 to protecting wild ecosystems</p>';world.append(heading);
+const heading=document.createElement('header');heading.className='canvas-heading';heading.innerHTML='<h1>Your Pancakes protect the wild</h1><p>Every pancake art you share, Kodiak donates $1 to protecting wild ecosystems</p>';world.append(heading);
 function decoration(name,left,top,width,height,rotation=0){const img=document.createElement('img');img.src=asset(name+'.svg');img.alt='';img.className='decoration';img.draggable=false;Object.assign(img.style,{left:left+'px',top:top+'px',width:width+'px',height:height+'px',transform:`rotate(${rotation}deg)`});world.append(img)}
 // Preserve the original Figma composition around the starting view.
 const ox=4300,oy=3488;
